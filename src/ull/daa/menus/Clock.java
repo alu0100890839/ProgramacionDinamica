@@ -4,7 +4,7 @@
  * Pablo Pastor Martín, Isaac Aimán Salas, Javier RAmos Fernández
  * Marzo de 2017
  */
-package ull.daa.progdin;
+package ull.daa.menus;
 
 /**
  * Reloj para encontrar el tiempo de ejecución de un algoritmo que lo use

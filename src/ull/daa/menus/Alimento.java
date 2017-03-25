@@ -5,7 +5,7 @@
  * 24/03/2017
  */
 
-package ull.daa.progdin;
+package ull.daa.menus;
 
 /**
  * Clase para representar los alimentos del problema 1.1

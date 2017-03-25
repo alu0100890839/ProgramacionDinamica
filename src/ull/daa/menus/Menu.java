@@ -5,7 +5,7 @@
  * 24/03/2017
  */
 
-package ull.daa.progdin;
+package ull.daa.menus;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
