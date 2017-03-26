@@ -57,7 +57,6 @@ public class ProgDin {
 		int i = universo.getSizeH(), j = universo.getSizeV();
 		coordenadas.add(0, new Integer[] {i, j});
 		while(i != 1 || j!= 1) {
-			System.out.println(i + " " + j + "    " + getMatrizSoluciones()[i][j] + "\n");
 			if(universo.getItem(i, j) + getMatrizSoluciones()[i - 1][j] == getMatrizSoluciones()[i][j]) {
 				i--;
 			}

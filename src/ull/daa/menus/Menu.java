@@ -44,22 +44,18 @@ public class Menu {
 	
 	/**
 	 * Método que realiza la ejecución del algoritmo recursivo
+	 * @param n Alimentos a tener en cuenta
+	 * @param insanos limite de nutrientes insanos
 	 */
-	public int runRecursive(int n, int insanos, HashSet<String> set) {
+	public int runRecursive(int n, int insanos) {
 		if(n == 0 && insanos >= 0) {
 			return 0;
 		}
 		if(insanos < 0) {
 			return Integer.MIN_VALUE;
 		}
-		int aux1 = runRecursive(n - 1, insanos, set);
-		int aux2 = runRecursive(n - 1, insanos - getAlimentos().get(n - 1).getNutrientesInsanos(), set) + getAlimentos().get(n - 1).getValorNutricional();
-		if(aux2 >= aux1) {
-			set.add((getAlimentos().get(n - 1).getNombre()));
-		}
-		else {
-			set.remove((getAlimentos().get(n - 1).getNombre()));
-		}
+		int aux1 = runRecursive(n - 1, insanos);
+		int aux2 = runRecursive(n - 1, insanos - getAlimentos().get(n - 1).getNutrientesInsanos()) + getAlimentos().get(n - 1).getValorNutricional();
 		return Math.max(aux1, aux2);
 	}
 	
@@ -68,11 +64,7 @@ public class Menu {
 	 * Método que arranca la ejecución del recursivo
 	 */
 	public void initRecursive() {
-		HashSet<String> set = new HashSet<String>();
-		System.out.println("Solucion: " + runRecursive(getNumPlatos(), getMaxInsanos(), set) + "\n");
-		for(String s: set) {
-			System.out.println(s + " Está en la solución\n");
-		}
+		System.out.println("Solucion: " + runRecursive(getNumPlatos(), getMaxInsanos()) + "\n");
 	}
 
 	/**

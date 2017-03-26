@@ -50,7 +50,7 @@ public class MenuProgDin extends Menu {
 	 * Método que realiza la ejecución del algoritmo bottom up
 	 */
 	public void runBottomUp() {
-		for(int i = 0; i < getMaxInsanos(); i++) {
+		for(int i = 0; i <= getMaxInsanos(); i++) {
 			getMatrizSolucion()[0][i] = 0;
 		}
 		for(int i = 1; i <= getNumPlatos(); i++) {
@@ -69,6 +69,8 @@ public class MenuProgDin extends Menu {
 	
 	/**
 	 * Método que realiza la ejecución del algoritmo top-down
+	 * @param n Platos que se tienen en cuenta
+	 * @param insanos Nutrientes insanos máximos
 	 */
 	public int runTopDown(int n, int insanos) {
 		if(n == 0 && insanos >= 0) {
@@ -98,7 +100,7 @@ public class MenuProgDin extends Menu {
 	 * @return String con la solución del problema
 	 */
 	public String solucion() {
-		String solucion = "La solución aporta un valor de: " + getMatrizSolucion()[getNumPlatos()][getMaxInsanos()] + "\nSolución:\n";
+		String solucion = "La solución aporta un valor de: " + getMatrizSolucion()[getNumPlatos()][getMaxInsanos()] + "\n\nPlatos:\n";
 		
 		int j = getMaxInsanos();
 		
@@ -106,7 +108,7 @@ public class MenuProgDin extends Menu {
 			Alimento alimento = getAlimentos().get(i - 1);
 			if((alimento.getNutrientesInsanos() <= j) && 
 					getMatrizSolucion()[i - 1][j - alimento.getNutrientesInsanos()] + alimento.getValorNutricional() == getMatrizSolucion()[i][j]) {
-				solucion += alimento.getNombre() + " está en la solución\n";
+				solucion += "- " + alimento.getNombre()+"\n";
 				j = j - alimento.getNutrientesInsanos();
 			}
 		}
