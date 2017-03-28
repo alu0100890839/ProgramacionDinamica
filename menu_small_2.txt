@@ -1,0 +1,7 @@
+5
+26
+Carne_fiesta			24	12
+Papas_arrugadas			13	7
+Principe_Alberto		23	11
+Chistorras				15	8
+Gofio_amasado			16	9

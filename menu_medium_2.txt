@@ -1,0 +1,9 @@
+7
+170
+Arvejas						442	41
+Carne_cabra				525	50
+Chopitos					511	49
+Quesadilla				593	59
+Príncipe_Alberto	546	55
+Sancocho					564	57
+Gofio_amasado			617	60
